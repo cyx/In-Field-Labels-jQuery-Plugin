@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/layout.css" type="text/css" media="all" charset="utf-8" />
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../src/jquery.infieldlabel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../src/jquery.infieldlabel.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script type="text/javascript" charset="utf-8">
 		$(function(){ $("label").inFieldLabels(); });
@@ -43,22 +43,22 @@
 	<form action="index.html" method="get" accept-charset="utf-8">
 		<fieldset>
 			<legend>Comment Form</legend>
-			<p>
-				<label for="name">Name</label><br />
+      <label for="name">
+        <span>Name</span>
 				<input type="text" name="name" value="" id="name">
-			</p>
-			<p>
-				<label for="email">Email</label><br />
+      </label>
+      <label for="email">
+        <span>Email</span>
 				<input type="text" name="email" value="" id="email">
-			</p>
-			<p>
-				<label for="website">Website</label><br />
+      </label>
+      <label for="website">
+        <span>Website</span>
 				<input type="text" name="website" value="" id="website">
-			</p>
-			<p>
-				<label for="comment">Comment</label><br />
+      </label>
+      <label for="comment">
+        <span>Comment</span>
 				<textarea cols="30" rows="10" name="comment" id="comment"></textarea>
-			</p>
+      </label>
 		</fieldset>
 		<p><input type="submit" value="Continue &rarr;"></p>
 	</form>
@@ -66,14 +66,16 @@
 	<form action="index.html" method="get" accept-charset="utf-8">
 		<fieldset>
 			<legend>Login Form</legend>
-			<p>
-				<label for="username">Username</label><br />
+      <label for="username">
+        <span>Username</span>
 				<input type="text" name="username" value="" id="username">
-			</p>
-			<p>
-				<label for="password">Password</label><br />
+      </label>
+
+      <label for="password">
+        <span>Password</span>
 				<input type="password" name="password" value="" id="password">
-			</p>
+      </label>
+
 		</fieldset>
 		<p><input type="submit" value="Continue &rarr;"></p>
 	</form>
@@ -81,17 +83,18 @@
 		<h2>Use</h2>
 		<p><strong>HTML</strong>:
 			<pre>
-&lt;p&gt;
-  &lt;label for=&quot;field_id&quot;&gt;Label Text&lt;/label&gt;&lt;br /&gt;
+&lt;label for=&quot;field_id&quot;&gt;
+  &lt;span&gt;Label Text&lt;/span&gt;
   &lt;input type=&quot;text&quot; name=&quot;field_id&quot; value=&quot;&quot;
 	id=&quot;field_id&quot;&gt;
-&lt;/p&gt;</pre>
+&lt;/label&gt;
+</pre>
 		</p>
 		<p><strong>CSS</strong>:<br />
 			More CSS is needed to position the label nicely over the input or text area element, but since it all depends on how you have styled those elements, only the bare-bones are listed here. Keep in mind any block element can surround the label and input field. <strong>&lt;p&gt;</strong> is used as an example.
 		<pre>
-form p { position:relative }
-label  { position:absolute; top:0; left:0}</pre>	
+form label { position:relative }
+form label span { position:absolute; top:0; left:0}</pre>	
 		</p>
 		<p><strong>Javascript</strong>:<br />
 		<pre>

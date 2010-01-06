@@ -17,7 +17,9 @@
         var base = this;
         
         // Access to jQuery and DOM versions of each element
-        base.$label = $(label);
+        //base.$label = $(label);
+        base.$label = $(label).find('span');
+        //base.label = label;
         base.label = label;
 
  		base.$field = $(field);
